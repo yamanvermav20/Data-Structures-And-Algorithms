@@ -19,6 +19,7 @@ public class climbingStairs {
             count++;
             return;
         }
+        
         climbingStair(n, height + 1);
         climbingStair(n, height + 2);
     }
