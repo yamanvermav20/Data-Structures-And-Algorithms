@@ -269,16 +269,16 @@ public class practice {
      */
         
         BinaryTree tree = new BinaryTree();
-        Node root = tree.buildTree(nodes);
-        tree.preorder(root);
-        System.out.println("null");
-        tree.inorder(root);
-        System.out.println("null");
-        tree.levelorder(root);
-        System.out.println("Depth or height - " + tree.maxDepth(root));
-        System.out.println("Count - " + tree.count(root));
-        System.out.println("Sum - " + tree.sum(root));
-        System.out.println("Diameter - " + tree.diameter(root).diam);
+        // Node root = tree.buildTree(nodes);
+        // tree.preorder(root);
+        // System.out.println("null");
+        // tree.inorder(root);
+        // System.out.println("null");
+        // tree.levelorder(root);
+        // System.out.println("Depth or height - " + tree.maxDepth(root));
+        // System.out.println("Count - " + tree.count(root));
+        // System.out.println("Sum - " + tree.sum(root));
+        // System.out.println("Diameter - " + tree.diameter(root).diam);
         
 
         /*
@@ -305,17 +305,17 @@ public class practice {
 
         */  
 
-        Node subRoot=new Node(2);
-        subRoot.left=new Node(4);
-        subRoot.right=new Node(5);
+        // Node subRoot=new Node(2);
+        // subRoot.left=new Node(4);
+        // subRoot.right=new Node(5);
 
-        HashSet<Integer>  set = new HashSet<>();
-        // tree.topViewwrong(root, set, 0);
-        tree.topViewCorrect(root1);
-        System.out.println();
-        int level = 3;
-        tree.kthlevel(root1, level, 1);
-        System.out.println();
+        // HashSet<Integer>  set = new HashSet<>();
+        // // tree.topViewwrong(root, set, 0);
+        // tree.topViewCorrect(root1);
+        // System.out.println();
+        // int level = 3;
+        // tree.kthlevel(root1, level, 1);
+        // System.out.println();
 
 
 
@@ -336,16 +336,17 @@ public class practice {
         // }
         // System.out.println(tree.isSubtree(root1,subRoot));
         // System.out.println();
-        // ArrayList<Node> path1 = new ArrayList<>();
-        // ArrayList<Node> path2 = new ArrayList<>();
-        // tree.newancestors(root1, 4, path1);
-        // tree.newancestors(root1, 7, path2);
-        // for(Node list : path1){
-        //     System.out.print(list.data + " ");
-        // }
-        // for(Node list1 : path2){
-        //     System.out.print(list1.data + " ");
-        // }
+
+        ArrayList<Node> path1 = new ArrayList<>();
+        ArrayList<Node> path2 = new ArrayList<>();
+        tree.newancestors(root1, 4, path1);
+        tree.newancestors(root1, 7, path2);
+        for(Node list : path1){
+            System.out.print(list.data + " ");
+        }
+        for(Node list1 : path2){
+            System.out.print(list1.data + " ");
+        }
 
 
         //subset code
@@ -366,6 +367,7 @@ public class practice {
              / \ / \
             4  5 6  7
      */
+        System.out.println();
         Node ans = tree.lca2(root1, 4, 5);
         System.out.println(ans.data);
     }
