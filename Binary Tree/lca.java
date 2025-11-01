@@ -32,19 +32,29 @@ public class lca {
             ancestors(root.right , val1, val2, list, result);
             list.remove(list.size() - 1);
         }
+        // public boolean newancestors(Node root, int val, ArrayList<Node> path){
+        //     if(root == null) return false;
+        //     path.add(root);
+
+        //     if(root.data == val){
+        //         return true;
+        //     }
+
+        //     boolean left = newancestors(root.left, val, path);
+        //     boolean right = newancestors(root.right, val, path);
+        //     if(left || right){
+        //         return true;
+        //     }
+        //     path.remove(path.size() - 1);
+        //     return false;
+        // }
         public boolean newancestors(Node root, int val, ArrayList<Node> path){
             if(root == null) return false;
+
             path.add(root);
-
-            if(root.data == val){
-                return true;
-            }
-
-            boolean left = newancestors(root.left, val, path);
-            boolean right = newancestors(root.right, val, path);
-            if(left || right){
-                return true;
-            }
+            if(root.data == val) return true;
+            if(newancestors(root.left, val, path)) return true;
+            if(newancestors(root.right, val, path)) return true;
             path.remove(path.size() - 1);
             return false;
         }
@@ -100,6 +110,7 @@ public class lca {
         for(Node list : path1){
             System.out.print(list.data + " ");
         }
+        System.out.println();
         for(Node list1 : path2){
             System.out.print(list1.data + " ");
         }
