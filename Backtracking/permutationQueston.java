@@ -25,12 +25,23 @@ public class permutationQueston {
         List<String> result = new ArrayList<>();
         List<Character> list = new ArrayList<>();
         permutation(str, ch, index, result, list);
-        for(String i : result){
-            String strr = i;
+        // for(String i : result){
+        //     String strr = i;
+        //     if(strr.charAt(index) == ch){
+        //         continue;
+        //     }
+        //     System.out.println(i);
+        // }
+        for(int i = 0; i < result.size(); i++){
+            String strr = result.get(i);
             if(strr.charAt(index) == ch){
-                continue;
+                result.remove(i);
+                i--;
             }
-            System.out.println(i);
+
+        }
+        for(String i : result){
+            System.err.println(i);
         }
         sc.close();
     }
