@@ -33,7 +33,7 @@ public class DP_0_1_Knapsack {
             int ans2 = knapsackDP(val, wt, W, n - 1, dp);
             dp[n][W] = Math.max(ans1, ans2);
             return dp[n][W];
-        }
+        }  
         else{//not valid
             dp[n][W] = knapsackDP(val, wt, W, n - 1, dp);
             return dp[n][W];
@@ -54,11 +54,11 @@ public class DP_0_1_Knapsack {
         for(int i = 0; i < dp.length; i++){ //0th col
             dp[i][0] = 0;
         }
-        for(int j = 0; j < dp[0].length; j++){
+        for(int j = 0; j < dp[0].length; j++){ //0th row
             dp[0][j] = 0;
         }
-        for(int i = 1; i < n + 1; i++){
-            for(int j = 1; j < W + 1; j++){
+        for(int i = 1; i < n + 1; i++){ //i = items
+            for(int j = 1; j < W + 1; j++){ //j = Weight(W)
                 int v = val[i - 1]; //ith item val
                 int w = wt[i - 1]; //ith item wt
                 if(w <= j){ //valid
