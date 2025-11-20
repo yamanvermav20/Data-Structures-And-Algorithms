@@ -18,6 +18,7 @@ public class Heaps {
     //child --> parent
     //i --> (i - 1) / 2
 
+    //this is mean heap just change sign >  < to alternate <  >  so it can be change to max heap
     public static class Heap{
         ArrayList<Integer> arr = new ArrayList<>();
 
@@ -42,7 +43,7 @@ public class Heaps {
             return arr.get(0);
         }
 
-        private void heapify (int i){
+        private void heapify (int i){ //O(log N)
             int left = 2 * i + 1;
             int right = 2 * i + 2;
             int minIdx = i;
@@ -65,6 +66,10 @@ public class Heaps {
             }
 
         }
+
+        //For 1st and last node swap
+        // remove last index arr.remove(arr.size() - 1);
+        // fix my heap function heapify 
         public int remove(){
             int data = arr.get(0);
 
@@ -80,11 +85,21 @@ public class Heaps {
             heapify(0);
             return data;
         } 
-        //For 1st and last node swap
-        // remove last index arr.remove(arr.size() - 1);
-        // fix my heap function heapify 
+
+        public boolean isEmpty(){
+            return arr.size() == 0;
+        }
     }
     public static void main(String[] args){
-        
+        Heap pq = new Heap();
+        pq.add(3);
+        pq.add(4);
+        pq.add(1);
+        pq.add(5);
+
+        while(!pq.isEmpty()){
+            System.out.println(pq.peek()); 
+            pq.remove();
+        }
     }
 }
