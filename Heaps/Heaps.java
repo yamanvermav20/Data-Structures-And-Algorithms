@@ -17,6 +17,9 @@ public class Heaps {
     
     //child --> parent
     //i --> (i - 1) / 2
+    //nodes from 0 to (n - 1) / 2 are internal nodes
+    //nodes from (n / 2) to n - 1 are leaf nodes;
+
 
     //this is mean heap just change sign >  < to alternate <  >  so it can be change to max heap
     public static class Heap{
@@ -28,6 +31,7 @@ public class Heaps {
             int x = arr.size() - 1; // x is my child index
             int par = (x - 1) / 2;
 
+            //min heap
             while(arr.get(x) < arr.get(par)){ //O(log N); as we are traversing through levels
                 //swap
                 int temp = arr.get(x);
@@ -97,7 +101,7 @@ public class Heaps {
         pq.add(1);
         pq.add(5);
 
-        while(!pq.isEmpty()){
+        while(!pq.isEmpty()){ //heap sort - O(N log N)
             System.out.println(pq.peek()); 
             pq.remove();
         }
