@@ -1,5 +1,6 @@
 import java.util.*;
-public class BFS {
+
+public class DFS {
     static class Edge{
         int src;
         int dest;
@@ -36,24 +37,21 @@ public class BFS {
         graph[5].add(new Edge(5, 6, 1));
 
         graph[6].add(new Edge(6, 5, 1));
-    }
-    public static void bfs(ArrayList<Edge>[] graph){ //O(V + E)
-        Queue<Integer> q = new LinkedList<>();
-        boolean visit[] = new boolean[graph.length];
-        q.add(0);
-        
-        while(!q.isEmpty()){
-            int curr = q.remove();
+    }   
+    public static void dfs(ArrayList<Edge>[] graph, int curr, boolean[] visited){
+        //O(V + E)
+        //visit
+        System.out.print(curr + " ");
+        visited[curr] = true;
 
-            if(!visit[curr]){
-                System.out.print(curr + " ");
-                visit[curr] = true;
-                for(int i = 0; i < graph[curr].size(); i++){
-                    Edge e = graph[curr].get(i);
-                    q.add(e.dest);
-                }
+        for(int i = 0; i < graph[curr].size(); i++){
+            Edge e = graph[curr].get(i);
+            if(!visited[e.dest]){
+                dfs(graph, e.dest, visited);
             }
         }
+
+
     }
     public static void main(String[] args){
         /*
@@ -67,6 +65,6 @@ public class BFS {
         int V = 7;
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
-        bfs(graph);
+        dfs(graph, 0, new boolean[V]);
     }
 }
