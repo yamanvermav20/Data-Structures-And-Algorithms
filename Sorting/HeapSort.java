@@ -24,7 +24,7 @@ public class HeapSort { //O(N Log N)
             heapify(arr, n, i);
         }
 
-        for(int i = n - 2; i >= 0; i--){
+        for(int i = n - 1; i >= 0; i--){
             //swap (largest - first) with last index
             int temp = arr[0];
             arr[0] = arr[i];
