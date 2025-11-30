@@ -43,9 +43,7 @@ public class HasPath {
         for(int i = 0; i < graph[curr].size(); i++){
             Edge e = graph[curr].get(i);
             if(dest == e.dest) return true;
-            if(!visited[e.dest]){
-                if(dfs(graph, e.dest, visited, src, dest)) return true;;
-            }
+            if(!visited[e.dest] && dfs(graph, e.dest, visited, src, dest)) return true;
         }
         return false;
     }
