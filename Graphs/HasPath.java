@@ -36,14 +36,14 @@ public class HasPath {
 
         graph[6].add(new Edge(6, 5));
     }
-    public static boolean dfs(ArrayList<Edge>[] graph, int curr, boolean[] visited, int src, int dest){
-        if(curr == dest || src == dest) return true;
+    public static boolean dfs(ArrayList<Edge>[] graph, boolean[] visited, int src, int dest){
+        if(src == dest) return true;
 
-        visited[curr] = true;
-        for(int i = 0; i < graph[curr].size(); i++){
-            Edge e = graph[curr].get(i);
-            if(dest == e.dest) return true;
-            if(!visited[e.dest] && dfs(graph, e.dest, visited, src, dest)) return true;
+        visited[src] = true;
+        for(int i = 0; i < graph[src].size(); i++){
+            Edge e = graph[src].get(i);
+
+            if(!visited[e.dest] && dfs(graph, visited, e.dest, dest)) return true;
         }
         return false;
     }
@@ -62,7 +62,7 @@ public class HasPath {
 
         boolean[] visited = new boolean[V];
         
-        boolean hasPath = dfs(graph, 0, visited, 0, 6);
+        boolean hasPath = dfs(graph, visited, 0, 6);
         System.out.println(hasPath);
     }
 }
