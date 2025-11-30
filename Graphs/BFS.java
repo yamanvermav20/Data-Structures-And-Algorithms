@@ -37,7 +37,8 @@ public class BFS {
 
         graph[6].add(new Edge(6, 5, 1));
     }
-    public static void bfs(ArrayList<Edge>[] graph){ //O(V + E)
+    public static void bfs(ArrayList,)
+    public static void bfsUtil(ArrayList<Edge>[] graph){ //O(V + E)
         Queue<Integer> q = new LinkedList<>();
         boolean visit[] = new boolean[graph.length];
         q.add(0);

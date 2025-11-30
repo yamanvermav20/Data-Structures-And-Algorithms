@@ -36,13 +36,14 @@ public class HasPath {
 
         graph[6].add(new Edge(6, 5));
     }
+
+    //O(V + E);
     public static boolean dfs(ArrayList<Edge>[] graph, boolean[] visited, int src, int dest){
         if(src == dest) return true;
 
         visited[src] = true;
         for(int i = 0; i < graph[src].size(); i++){
             Edge e = graph[src].get(i);
-
             if(!visited[e.dest] && dfs(graph, visited, e.dest, dest)) return true;
         }
         return false;

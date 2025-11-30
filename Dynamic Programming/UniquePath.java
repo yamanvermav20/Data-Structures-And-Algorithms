@@ -1,5 +1,6 @@
 public class UniquePath {
-    //tabulation Code
+    //tabulation Code O(m x n)
+    //space O(m x n)
     public static int uniquePathsMemo(int m, int n) {
         int[][] dp = new int[m][n];
         for(int i = 0; i < m; i++){
@@ -16,7 +17,8 @@ public class UniquePath {
         return dp[m - 1][n - 1];
     }  
 
-    //memoization Code
+    //memoization Code O(m × n)
+    // Space O(m × n) + stack O(m+n)
     public static int path(int i, int j, int[][] dp){
         if(i == 0 || j == 0) return 1;
 
