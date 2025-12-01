@@ -4,6 +4,7 @@
 //then its a bipartitie graph
 
 import java.util.ArrayList;
+import java.util.Queue;
 
 public class Bipartite {
     static class Edge{
@@ -37,6 +38,26 @@ public class Bipartite {
         graph[5].add(new Edge(5, 6));
 
         graph[6].add(new Edge(6, 5));
+    }
+    public static boolean isBipartite(ArrayList<Edge>[] graph){
+        int col[] = new int[graph.length];
+        for(int i = 0; i < col.length; i++){
+            col[i] = -1; //no color;
+        }
+
+        Queue<Integer> q = new LinkedList<>();
+        for(int i = 0; i < graph.length; i++){
+            if(col[i] == -1){ //BFS
+                q.add(i);
+                col[i] = 0; //yellow
+                while(!q.isEmpty()){
+                    int curr = q.remove();
+                    for(int j = 0; j < graph[curr].size(); j++){
+                        Edge e = graph[curr]
+                    }
+                }
+            } 
+        }
     }
     public static void main(String[] args){
         int V = 7;

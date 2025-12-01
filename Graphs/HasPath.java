@@ -37,13 +37,6 @@ public class HasPath {
         graph[6].add(new Edge(6, 5));
     }
 
-    public static boolean isBipartite(ArrayList<Edge>[] graph){
-        int col[] = new int[graph.length];
-        for(int i = 0; i < col.length; i++){
-            col[i] = -1
-        }
-    }
-
     //O(V + E);
     public static boolean dfs(ArrayList<Edge>[] graph, boolean[] visited, int src, int dest){
         if(src == dest) return true;
