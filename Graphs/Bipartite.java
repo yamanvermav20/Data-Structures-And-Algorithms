@@ -3,7 +3,7 @@
 //if this possible for all nodes
 //then its a bipartitie graph
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Queue;
 
 public class Bipartite {
@@ -39,6 +39,7 @@ public class Bipartite {
 
         graph[6].add(new Edge(6, 5));
     }
+    //O(V + E)
     public static boolean isBipartite(ArrayList<Edge>[] graph){
         int col[] = new int[graph.length];
         for(int i = 0; i < col.length; i++){
@@ -53,16 +54,36 @@ public class Bipartite {
                 while(!q.isEmpty()){
                     int curr = q.remove();
                     for(int j = 0; j < graph[curr].size(); j++){
-                        Edge e = graph[curr]
+                        Edge e = graph[curr].get(j); //e.dest
+                        if(col[e.dest] == -1){
+                            int nextCol = col[curr] == 0 ? 1 : 0;
+                            col[e.dest] = nextCol;
+                            q.add(e.dest);
+                        }
+                        else if(col[e.dest] == col[curr]){
+                            return false; //NOT bipartite
+                        }
                     }
                 }
             } 
         }
+        return true;
     }
     public static void main(String[] args){
+        //If graph doesn't have cycle then its a bipartite graph
+        /*
+            1 ---- 3
+            /      | \
+           0       |  5 --- 6
+            \      |  /
+             2 ----4 
+
+         */
         int V = 7;
         ArrayList<Edge>[] graph = new ArrayList[V];
         createGraph(graph);
+
+        System.out.println(isBipartite(graph));
 
     }
 }
