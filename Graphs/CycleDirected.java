@@ -38,6 +38,16 @@ public class CycleDirected {
         // graph[6].add(new Edge(6, 5));
     }
     public static void main(String[] args){
+        /*
+            1 ---- 3
+            /      | \
+           0       |  5 --- 6
+            \      |  /
+             2 ----4 
 
+         */
+        int V = 7;
+        ArrayList<Edge> graph[] = new ArrayList[V];
+        createGraph(graph);
     }
 }
