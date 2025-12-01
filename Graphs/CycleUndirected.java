@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Cycle {
+public class CycleUndirected {
     static class Edge{
         int src;
         int dest;

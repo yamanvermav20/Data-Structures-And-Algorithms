@@ -71,6 +71,10 @@ public class Bipartite {
     }
     public static void main(String[] args){
         //If graph doesn't have cycle then its a bipartite graph
+        //Acylic : TRUE
+        //EVEN Cycle : TRUE
+        //ODD Cycle : FALSE
+        
         /*
             1 ---- 3
             /      | \
