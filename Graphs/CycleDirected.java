@@ -36,7 +36,6 @@ public class CycleDirected {
         graph[5].add(new Edge(5, 6));
 
         graph[6].add(new Edge(6, 5));
-        graph[6].add(new Edge(6, 5));
     }
     public static boolean isCycle(ArrayList<Edge>[] graph){
         boolean visited[] = new boolean[graph.length];
