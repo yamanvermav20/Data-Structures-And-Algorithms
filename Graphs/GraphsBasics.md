@@ -60,3 +60,6 @@ Each node stores list of neighbors — best for sparse graphs.
 
 ---
 
+✅ Today Focus:
+- BFS traversal
+- Shortest Path in Matrix
