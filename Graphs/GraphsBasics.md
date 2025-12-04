@@ -36,3 +36,13 @@ Contains cycles.
 No cycles (Example: DAG).
 
 ---
+
+## Graph Representations
+
+### 1. Adjacency Matrix
+2D array — good for dense graphs.
+
+### 2. Adjacency List
+Each node stores list of neighbors — best for sparse graphs.
+
+---
