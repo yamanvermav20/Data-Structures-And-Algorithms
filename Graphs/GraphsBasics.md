@@ -64,3 +64,4 @@ Each node stores list of neighbors — best for sparse graphs.
 - BFS traversal
 - Shortest Path in Matrix
 - flood fill
+- no. of islands
