@@ -46,3 +46,17 @@ No cycles (Example: DAG).
 Each node stores list of neighbors — best for sparse graphs.
 
 ---
+
+## Important Graph Algorithms
+
+| Algorithm         | Use |
+|-------------------|------|
+| BFS               | Shortest path (unweighted) |
+| DFS               | Flood fill, cycles |
+| Topological Sort | DAG ordering |
+| Dijkstra         | Shortest path (weighted) |
+| Union Find       | Cycle detection |
+| MST (Kruskal)    | Minimum spanning tree |
+
+---
+
