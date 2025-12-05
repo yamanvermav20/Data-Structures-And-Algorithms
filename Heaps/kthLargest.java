@@ -13,15 +13,15 @@ public class kthLargest {
         }
 
         while(!pq.isEmpty()){
-            System.out.println
+            System.out.println(pq.poll());
         }
 
     }
     public static void main(String[] args) {
-        int[] arr = {2, 1, 3, 5, 3, 22, 34};
+        int[] arr = {2, 1, 3, 5, 3, 22, 34, 1, 1, 1};
         int k = 4;
 
-        kthLargest(arr k);
+        kthLargest(arr, k);
 
     }
 }
