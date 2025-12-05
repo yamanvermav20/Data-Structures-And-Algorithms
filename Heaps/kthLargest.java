@@ -1,17 +1,18 @@
 import java.util.PriorityQueue;
 
 public class kthLargest {
-    public static kthLargest
-    public static void main(String[] args) {
+    public static void kthLargest(int[] arr){
         PriorityQueue<Integer> pq = new PriorityQueue<>();
+        
+        for(int i = 0; i < arr.length; i++){
 
-        pq.add(3);
-        pq.add(32);
-        pq.add(32);
-        pq.add(63);
-        pq.add(73);
-        pq.add(13);
-        pq.add(3);
+        }
+
+    }
+    public static void main(String[] args) {
+        int[] arr = {2, 1, 3, 5, 3, 22, 34};
+
+        kthLargest(arr);
 
     }
 }
