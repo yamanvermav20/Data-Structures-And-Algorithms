@@ -1,21 +1,21 @@
 public class Stuckmaze {
 
-    public static int dfs(int[][] maze, int sr, int sc, int dr, int dc, boolean[][] visited){
-        if(sr < 0 || sr >= maze.length || sc < 0 || sc >= maze[0].length || maze[sr][sc] == 0 || visited[sr][sc]) return 0;
+    public static int dfs(int[][] maze, int sr, int sc, int dr, int dc){
+        if(sr < 0 || sr >= maze.length || sc < 0 || sc >= maze[0].length || maze[sr][sc] == 0 ) return 0;
 
         if(sr == dr && sc == dc){
             return 1;
         }
         
-        visited[sr][sc] = true;
-        int left = dfs(maze, sr - 1, sc, dr, dc, visited);
-        int right = dfs(maze, sr, sc + 1, dr, dc, visited);
-        visited[sr][sc]= false;
+        maze[sr][sc] = 0;
+        int left = dfs(maze, sr - 1, sc, dr, dc);
+        int right = dfs(maze, sr, sc + 1, dr, dc);
+        maze[sr][sc] = 1;
 
         return left + right;
     }
-    public static int canReach(int[][] maze, int sr, int sc, int dr, int dc, boolean[][] visited) {
-        int ways = dfs(maze, sr, sc, dr, dc, visited);
+    public static int canReach(int[][] maze, int sr, int sc, int dr, int dc) {
+        int ways = dfs(maze, sr, sc, dr, dc);
         return ways;
     }
 
@@ -31,9 +31,8 @@ public class Stuckmaze {
         int sr = 2, sc = 1;   
         int dr = 1, dc = 3;   
 
-        boolean[][] visited = new boolean[maze.length][maze[0].length];
 
-        int result = canReach(maze, sr, sc, dr, dc, visited);
+        int result = canReach(maze, sr, sc, dr, dc);
 
 
         System.out.println(result);
