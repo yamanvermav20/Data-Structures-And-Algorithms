@@ -38,6 +38,7 @@ public class SrcToDestPath {
 
         graph[6].add(new Edge(6, 5, 1));
     }   
+    //O(V ^ v);
     public static void printAllPath(ArrayList<Edge>[] graph, int src, int dest, String path, boolean[] visited){
         if(src == dest){
             System.out.println(path + dest);

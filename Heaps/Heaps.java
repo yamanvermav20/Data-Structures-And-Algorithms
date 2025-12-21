@@ -21,7 +21,7 @@ public class Heaps {
     //nodes from (n / 2) to n - 1 are leaf nodes;
 
 
-    //this is mean heap just change sign >  < to alternate <  >  so it can be change to max heap
+    //this is min heap just change sign >  < to alternate <  >  so it can be change to max heap
     public static class Heap{
         ArrayList<Integer> arr = new ArrayList<>();
 

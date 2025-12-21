@@ -24,6 +24,12 @@ public class HeapSort { //O(N Log N)
             heapify(arr, n, i);
         }
 
+        // Build a max-heap → largest element is at arr[0].
+        // Place this largest element at the END of the array.
+        // Reduce heap size (ignore the last placed element).
+        // Heapify again to get the next largest element at top.
+        // Repeat.
+        
         for(int i = n - 1; i >= 0; i--){
             //swap (largest - first) with last index
             int temp = arr[0];
