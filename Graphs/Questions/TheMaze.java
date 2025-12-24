@@ -41,18 +41,18 @@ public class TheMaze {
     }
 
     public static void main(String[] args) {
-    int[][] maze = {
-        {0,0,1,0,0},
-        {0,0,0,0,0},
-        {0,0,0,1,0},
-        {1,1,0,1,1},
-        {0,0,0,0,0}
-    };
+        int[][] maze = {
+            {0,0,1,0,0},
+            {0,0,0,0,0},
+            {0,0,0,1,0},
+            {1,1,0,1,1},
+            {0,0,0,0,0}
+        };
 
-    int[] start = {0,4};
-    int[] destination = {4,4};
+        int[] start = {0,4};
+        int[] destination = {4,4};
 
-    System.out.println(hasPath(maze, start, destination));
-}
+        System.out.println(hasPath(maze, start, destination));
+    }
 
 }
