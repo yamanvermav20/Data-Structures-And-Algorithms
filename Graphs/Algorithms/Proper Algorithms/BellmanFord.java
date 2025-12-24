@@ -1,18 +1,6 @@
 import java.util.*;
 
-//shortest path algorithm for directed non negative values graph
-
-//  What Dijkstra REALLY DOES
-//  It processes nodes IN ORDER OF THEIR CURRENT SHORTEST DISTANCE
-// (based on PriorityQueue)
-//  Once a node is processed (visited = true),
-// we are 100% sure its shortest path is finalized.
-//  Because any other longer path reaching this node will never be shorter
-// than the one already processed.
-// This is the core of Dijkstra.
-
-
-public class Dijkstra {
+public class BellmanFord {
     static class Edge {
         int src;
         int dest;
@@ -61,41 +49,39 @@ public class Dijkstra {
     }
 
     //O(V + E LogV)
-    public static void dijkstra(ArrayList<Edge>[] graph, int src){
-        int[] dist = new int[graph.length];     //dist[i] -> src to i
+    public static void bellmanFord(ArrayList<Edge>[] graph, int src){
+        int dist[] = new int[graph.length];
 
-        for(int i = 0; i < graph.length; i++){
+        for(int i = 0; i < dist.length; i++){
             if(i != src){
                 dist[i] = Integer.MAX_VALUE;
             }
         }
 
-        PriorityQueue<Pair> pq = new PriorityQueue<>();
-        boolean[] visited = new boolean[graph.length];
+        int V = graph.length;
 
-        pq.offer(new Pair(src, 0));
+        //algo
+        for(int i = 0; i < V - 1; i++){
+            //edges - O(E)
 
-        while(!pq.isEmpty()){
-            Pair curr = pq.poll();
-
-            if(!visited[curr.n]){
-                visited[curr.n] = true;
-
-                for(int i = 0; i < graph[curr.n].size(); i++){
-                    Edge e = graph[curr.n].get(i);
+            for(int j = 0; j < graph.length; j++){
+                for(int k = 0; k < graph[j].size(); k++){
+                    Edge e = graph[j].get(k);
+                    //u, v, wt
                     int u = e.src;
                     int v = e.dest;
                     int wt = e.wt;
 
-                    if(dist[u] + wt < dist[v]){
+                    //relaxation
+                    if(dist[u] != Integer.MAX_VALUE && dist[u] + wt < dist[v]){
                         dist[v] = dist[u] + wt;
-                        pq.offer(new Pair(v, dist[v]));
                     }
                 }
             }
+
         }
 
-        //print all source to vertices shortest dist
+        //print
         for(int i = 0; i < dist.length; i++){
             System.out.print(dist[i] + " ");
         }
@@ -127,7 +113,7 @@ public class Dijkstra {
 
         createGraph(graph);
 
-        dijkstra(graph, 0);
+        bellmanFord(graph, 0);
         // for (int i = 0; i < V; i++) {
         //     System.out.print(i + " → ");
         //     for (Edge e : graph[i]) {
@@ -137,39 +123,3 @@ public class Dijkstra {
         // }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//so basically its save time complexity 
-// by processing the nodes with shortest 
-// distance first rather
-//  than adding it with largest distance 
-// later as we have done vistied true so it dont process for 
-// unecssary calculatio as it can be never be less than path finded first
