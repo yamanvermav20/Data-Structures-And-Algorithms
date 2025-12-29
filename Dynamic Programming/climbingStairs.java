@@ -49,7 +49,7 @@ public class climbingStairs {
         long[]dp = new long[n + 1];
         dp[0] = 1;
 
-        for(int i = 1; i <=  n; i++){
+        for(int i = 1; i <= n; i++){
             if(i == 1){
                 dp[i] = dp[i - 1];
             }
