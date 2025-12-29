@@ -3,6 +3,7 @@ public class Target_Sum_Subset {
         int n = nums.length;
         boolean[][] dp = new boolean[n + 1][sum + 1];
         
+        //i = items, j = target Sum
         for(int i = 0; i <= n; i++){
             dp[i][0] = true;
         }
@@ -17,9 +18,18 @@ public class Target_Sum_Subset {
                 }
             }
         }
+        print(dp);
         return dp[n][sum];
     }
 
+    public static void print(boolean[][] dp){
+        for(int i = 0; i < dp.length; i++){
+            for(int j = 0; j < dp[0].length; j++){
+                System.out.print(dp[i][j] + " ");                
+            }
+            System.out.println();
+        }
+    }
     public static boolean targetSumSubsetOptimized(int[] nums, int sum) {
         boolean[] dp = new boolean[sum + 1];
         dp[0] = true;
@@ -33,7 +43,7 @@ public class Target_Sum_Subset {
     }
 
     public static void main(String[] args){
-        int[] nums = {1, 2, 3, 4, 5};
+        int[] nums = {1, 2, 3, 4};
         int sum = 3;
         System.out.println(targetSumSubset(nums, sum));
     }
