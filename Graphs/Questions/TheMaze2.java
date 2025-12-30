@@ -20,12 +20,13 @@ public class TheMaze2 {
     public static int hasPath(int[][] maze, int[] start, int[] destination){
         PriorityQueue<Pair> queue = new PriorityQueue<>();
 
-        queue.offer(new Pair(start[0], start[1], 0));
         int[][] dist = new int[maze.length][maze[0].length];
         for (int i = 0; i < maze.length; i++) {
             Arrays.fill(dist[i], Integer.MAX_VALUE);
         }
+        
         dist[start[0]][start[1]] = 0;
+        queue.offer(new Pair(start[0], start[1], 0));
 
         int[][] dir = {
             {0, 1},
