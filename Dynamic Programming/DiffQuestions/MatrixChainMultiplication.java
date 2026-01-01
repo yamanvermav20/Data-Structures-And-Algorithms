@@ -65,6 +65,9 @@ public class MatrixChainMultiplication {
             Arrays.fill(i, -1);
         }
         System.out.println(MCM(arr, 1, n - 1, dp));
+        print(dp);
+        System.out.println();
         System.out.println(mcmTab(arr));
+
     }    
 }

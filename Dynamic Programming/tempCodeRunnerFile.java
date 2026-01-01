@@ -1,2 +1,4 @@
-{1, 2, 5};
-        int sum = 11;
+
+        int[] arr = {2, 3, 4, 4, 1};
+        System.out.println(min(arr));
+    }
