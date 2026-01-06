@@ -41,22 +41,22 @@ public class BFS {
         boolean visit[] = new boolean[graph.length];
         for(int i = 0; i < graph.length; i++){
             if(!visit[i]){
-                bfsUtil(graph, visit);
+                bfsUtil(graph, visit, i);
             }
         }
     }
-    public static void bfsUtil(ArrayList<Edge>[] graph, boolean[] visit){ //O(V + E)
+    public static void bfsUtil(ArrayList<Edge>[] graph, boolean[] visit, int start){ //O(V + E)
         Queue<Integer> q = new LinkedList<>();
-        q.add(0);
-        
+        q.add(start);
+        visit[start] = true;
+
         while(!q.isEmpty()){
             int curr = q.remove();
-
-            if(!visit[curr]){
-                System.out.print(curr + " ");
-                visit[curr] = true;
-                for(int i = 0; i < graph[curr].size(); i++){
-                    Edge e = graph[curr].get(i);
+            System.out.print(curr + " ");
+            for(int i = 0; i < graph[curr].size(); i++){
+                Edge e = graph[curr].get(i);
+                if(!visit[e.dest]){
+                    visit[e.dest] = true;
                     q.add(e.dest);
                 }
             }
