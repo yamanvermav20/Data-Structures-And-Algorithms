@@ -17,7 +17,7 @@ public class Heaps {
     
     //child --> parent
     //i --> (i - 1) / 2
-    //nodes from 0 to (n - 1) / 2 are internal nodes
+    //nodes from 0 to (n / 2) - 1 are internal nodes
     //nodes from (n / 2) to n - 1 are leaf nodes;
 
 

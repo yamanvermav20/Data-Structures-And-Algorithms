@@ -21,24 +21,24 @@ public class JobScheduling {
                 return b[1] - a[1];
         });
 
-        int maxDeadline = 0;
+        int maxDeadlines = 0;
         for (int i = 0; i < n; i++) {
-            maxDeadline = Math.max(maxDeadline, arr[i][0]);
+            maxDeadlines = Math.max(maxDeadlines, arr[i][0]);
         }
         
-        int[] slot = new int[maxDeadline + 1];
+        int[] slot = new int[maxDeadlines + 1];
         Arrays.fill(slot, -1);
 
-        int maxProfit = 0;
+        int maxProfits = 0;
 
         for(int i = 0; i < n; i++){
-            int deadline = arr[i][0];
-            int profit = arr[i][1];
+            int deadlines = arr[i][0];
+            int profits = arr[i][1];
 
-            for(int t = deadline; t > 0; t--){
+            for(int t = deadlines; t > 0; t--){
                 if(slot[t] == -1){      
-                    slot[t] = profit;   
-                    maxProfit += profit;
+                    slot[t] = profits;   
+                    maxProfits += profits;
                     break;
                 }
             }
@@ -48,7 +48,7 @@ public class JobScheduling {
             System.out.println(arr[i][0] + "  " + arr[i][1]);
         }
 
-        System.out.println(maxProfit);
+        System.out.println(maxProfits);
         sc.close();
     }
 }
