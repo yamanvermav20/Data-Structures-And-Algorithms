@@ -14,7 +14,7 @@ public class rodCutting {
         for(int i = 1; i <= n; i++){
             for(int j = 1; j <= totalRod; j++){
                 if(length[i - 1] <= j){
-                    dp[i][j] = Math.max(dp[i -1][j], prices[i - 1] + dp[i][j - length[i - 1]]);
+                    dp[i][j] = Math.max(dp[i - 1][j], prices[i - 1] + dp[i][j - length[i - 1]]);
                 }
                 else{
                     dp[i][j] = dp[i - 1][j];

@@ -73,9 +73,9 @@ public class Prims {
 
                 for(int i = 0; i < graph[curr.v].size(); i++){
                     Edge e = graph[curr.v].get(i);
-                    // if (!visited[e.dest]) {
+                    if (!visited[e.dest]) {
                         pq.add(new Pair(e.dest, e.wt));
-                    // }
+                    }
 
                 }
             }

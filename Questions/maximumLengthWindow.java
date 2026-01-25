@@ -1,5 +1,6 @@
 import java.util.*;
 public class maximumLengthWindow {
+    //max length window with sum equals = k;
     public static int maxLength(int[] arr, int k){
         HashMap<Long, Integer> map = new HashMap<>();
         long sum = 0;
