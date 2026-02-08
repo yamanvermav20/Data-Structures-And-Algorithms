@@ -1,6 +1,6 @@
 import java.util.*;
 public class countNubmerofNiceSubarray {
-    public int numberOfSubarrays(int[] nums, int k) {
+    public static int numberOfSubarrays(int[] nums, int k) {
         for(int i = 0; i < nums.length; i++){
             if(nums[i] % 2 == 0) nums[i] = 0;
             else nums[i] = 1;
@@ -18,6 +18,8 @@ public class countNubmerofNiceSubarray {
         return count;
     }
     public static void main(String[] args) {
-        int[] nums
+        int[] nums = {1,1,2,1,1};
+        int k = 3;
+        System.out.print(numberOfSubarrays(nums, k));
     }
 }
