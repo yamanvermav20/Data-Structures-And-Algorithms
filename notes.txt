@@ -1,0 +1,32 @@
+str = aabbaa;
+if(s[i] == s[i + 1]){
+    s[i + 2] = s[i]; operation unlimited times
+}
+
+return the max operation you can do on the string;
+Input : aabbaa;
+
+1st way
+aabbaa;
+aabbba;
+aabbbb;
+aaabbb;
+aaaabb;
+aaaaab;
+aaaaaa;   7
+
+
+2nd way
+aabbaa;
+aaabaa;
+aaaaaa;     2 
+Max operation is max(7, 2);
+return 7;
+
+
+bbafcebbdefbdbdb;
+bbafcebbbbbbbbbb; // 5 operations changing only not equal characters
+bbbbbbbbbbbbbbbb; // 4 operations more changing only not equal
+answer 5 + 4 = 9;
+
+
