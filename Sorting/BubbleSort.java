@@ -36,3 +36,5 @@ public class BubbleSort {
    
     }
 }
+
+//Bubble Sort push the largest element to the end of the array in each iteration.
