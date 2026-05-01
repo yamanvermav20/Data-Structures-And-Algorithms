@@ -1,4 +1,5 @@
 //Top Sort is implement on DAG(Direced Acyclic Graph)
+//Kahn Algorithm
 import java.util.*;
 
 public class TopSortBFS {

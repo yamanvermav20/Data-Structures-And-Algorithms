@@ -4,6 +4,9 @@ package Sorting;
 // Best: O(n) (already sorted)
 // Worst: O(n²)
 // Space Complexity: O(1)
+//Insertion Sort picks one element and inserts it into its correct position in the sorted part of the array.
+//it start from that element index to 0 index because it push other elements greater than key to right side and then push the key at most left where it has to be placed
+
 
 import java.util.Scanner;
 
