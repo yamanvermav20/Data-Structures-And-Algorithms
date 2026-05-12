@@ -23,7 +23,7 @@ public class HeapSort { //O(N Log N)
         for(int i = n/2 - 1; i >= 0; i--){
             heapify(arr, n, i);
         }
-
+        //call heapify for each non leaf node first to make max heap
         // Build a max-heap → largest element is at arr[0].
         // Place this largest element at the END of the array.
         // Reduce heap size (ignore the last placed element).

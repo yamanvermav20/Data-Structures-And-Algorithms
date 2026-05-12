@@ -3,6 +3,12 @@ public class Main{
         //Time complexity = O(n) best case 
                         //   = O(n2) worst case;
         //Space = O(1);
+        //❌ not stable algorithm : means preserve teh relative order of equal elements
+        //[(4a), (4b), (3)]
+        //At i = 0, minIndex becomes 2 (value = 3).
+        //Swap arr[0] with arr[2].
+        //Result: [3, 4b, 4a].
+
         for(int i = 0; i < arr.length; i++){
             boolean swap = false;
             for(int j = 0; j < arr.length - i - 1; j++){
